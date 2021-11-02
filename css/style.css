@@ -5,7 +5,20 @@ body {
   font-family: "Comfortaa", cursive;
 }
 
-.ledger {
+/* Sales Ledger formmating */
+section.ledger {
   color: blue;
-  /* font-family: font-family: 'Azeret Mono', monospace; */
+  font-family: "Azeret Mono", monospace;
+  margin-top: 10px;
+}
+
+section.ledger h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+section.ledger ul li {
+  color: blueviolet;
+  margin-left: 25px;
+  list-style: disc;
 }
