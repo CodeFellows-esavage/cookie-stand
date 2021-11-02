@@ -27,6 +27,7 @@ function locationLedger (object){
     const mainEl = document.querySelector('main');
     const sectionEl = document.createElement('section');
     mainEl.appendChild(sectionEl);
+    sectionEl.setAttribute('class', 'ledger');
 
     const h2El = document.createElement('h2');
     sectionEl.appendChild(h2El);
