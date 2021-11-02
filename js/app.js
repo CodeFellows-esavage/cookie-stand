@@ -24,21 +24,21 @@ Store.prototype.randHrlyCustomers = function() {
 //    object.estDailySales = dailySales;
 //    object.totalSales = total;
 // };
-function estCookieSales(object) {
+Store.prototype.estCookieSales = function() {
     let cookieSales;
     let dailySales = [];
     let total = 0;
     for (let i = 0; i <=  13; i += 1){
-     cookieSales = Math.round(object.randHrlyCustomers() * object.avgCustSale)
+     cookieSales = Math.round(this.randHrlyCustomers() * this.avgCustSale)
      dailySales[i] = cookieSales;
      total += cookieSales;
     }
-    object.estDailySales = dailySales;
-    object.totalSales = total;
+    this.estDailySales = dailySales;
+    this.totalSales = total;
  };
 
 function locationLedger (object){
-    estCookieSales(object);
+    // estCookieSales(object);
     const mainEl = document.querySelector('main');
     const sectionEl = document.createElement('section');
     mainEl.appendChild(sectionEl);
@@ -78,7 +78,7 @@ function Store (location, minHrlyCust, maxHrlyCust, avgCustSale, estDailySales, 
     this.avgCustSale = avgCustSale,
     this.estDailySales = estDailySales,
     this.totalSales = totalSales,
-    this.randHrlyCustomers()
+    this.estCookieSales()
 }
 
 const seattleStore = new Store('Seattle', 23, 65, 6.3, [], 0);
@@ -93,57 +93,7 @@ console.log(seattleStore.randHrlyCust);
 console.log(seattleStore.randHrlyCust);
 console.log(seattleStore.randHrlyCust);
 console.log(seattleStore.randHrlyCust);
-// const seattle = {
-//     location: 'Seattle',
-//     minHrlyCust: 23,
-//     maxHrlyCust: 65,
-//     avgCustSale: 6.3,
-//     randHrlyCust: randHrlyCustomers,
-//     estDailySales: [],
-//     totalSales: 0,
-// };
 
-// const tokyo = {
-//     location: 'Tokyo',
-//     minHrlyCust: 3,
-//     maxHrlyCust: 24,
-//     avgCustSale: 1.2,
-//     randHrlyCust: randHrlyCustomers,
-//     estDailySales: [],
-//     totalSales: 0,
-// };
-
-// const dubai = {
-//     location: 'Dubai',
-//     minHrlyCust: 11,
-//     maxHrlyCust: 38,
-//     avgCustSale: 3.7,
-//     randHrlyCust: randHrlyCustomers,
-//     estDailySales: [],
-//     totalSales: 0,
-// };
-
-// const paris = {
-//     location: 'Paris',
-//     minHrlyCust: 20,
-//     maxHrlyCust: 38,
-//     avgCustSale: 2.3,
-//     randHrlyCust: randHrlyCustomers,
-//     estDailySales: [],
-//     totalSales: 0,
-// };
-
-// const lima = {
-//     location: 'Lima',
-//     minHrlyCust: 2,
-//     maxHrlyCust: 16,
-//     avgCustSale: 4.6,
-//     randHrlyCust: randHrlyCustomers,
-//     estDailySales: [],
-//     totalSales: 0,
-// };
-
-// //Start writing into the DOM:
 locationLedger(seattleStore);
 locationLedger(tokyoStore);
 locationLedger(dubaiStore);
