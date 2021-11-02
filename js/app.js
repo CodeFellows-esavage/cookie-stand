@@ -5,25 +5,10 @@ function customerRange(min, max) {
     return max - min;
 };
 
-// function randHrlyCustomers() {
-//     return Math.trunc(Math.random() * customerRange(this.minHrlyCust, this.maxHrlyCust) + 1) + this.minHrlyCust;
-// };
 Store.prototype.randHrlyCustomers = function() {
     return Math.trunc(Math.random() * customerRange(this.minHrlyCust, this.maxHrlyCust) + 1) + this.minHrlyCust;
 };
 
-// function estCookieSales(object) {
-//    let cookieSales;
-//    let dailySales = [];
-//    let total = 0;
-//    for (let i = 0; i <=  13; i += 1){
-//     cookieSales = Math.round(object.randHrlyCustomers() * object.avgCustSale)
-//     dailySales[i] = cookieSales;
-//     total += cookieSales;
-//    }
-//    object.estDailySales = dailySales;
-//    object.totalSales = total;
-// };
 Store.prototype.estCookieSales = function() {
     let cookieSales;
     let dailySales = [];
@@ -37,8 +22,7 @@ Store.prototype.estCookieSales = function() {
     this.totalSales = total;
  };
 
-function locationLedger (object){
-    // estCookieSales(object);
+Store.prototype.renderLedger = function (){
     const mainEl = document.querySelector('main');
     const sectionEl = document.createElement('section');
     mainEl.appendChild(sectionEl);
@@ -46,29 +30,29 @@ function locationLedger (object){
 
     const h2El = document.createElement('h2');
     sectionEl.appendChild(h2El);
-    h2El.textContent = `${object.location}`;
+    h2El.textContent = `${this.location}`;
 
     const ulEl = document.createElement('ul');
     sectionEl.appendChild(ulEl);
-    for (let i = 0; i < object.estDailySales.length; i += 1){
+    for (let i = 0; i < this.estDailySales.length; i += 1){
         if (i < 6){
             const liEl = document.createElement('li');
             ulEl.appendChild(liEl);
-            liEl.textContent = `${i + 6}am: ${object.estDailySales[i]} cookies`;
+            liEl.textContent = `${i + 6}am: ${this.estDailySales[i]} cookies`;
             // console.log(ulEl.textContent);
         } else if (i === 6){
             const liEl = document.createElement('li');
             ulEl.appendChild(liEl);
-            liEl.textContent = `${i + 6}pm: ${object.estDailySales[i]} cookies`;
+            liEl.textContent = `${i + 6}pm: ${this.estDailySales[i]} cookies`;
         } else {
             const liEl = document.createElement('li');
             ulEl.appendChild(liEl);
-            liEl.textContent = `${i - 6}pm: ${object.estDailySales[i]} cookies`;
+            liEl.textContent = `${i - 6}pm: ${this.estDailySales[i]} cookies`;
         }    
     }
     const liEl = document.createElement('li');
         ulEl.appendChild(liEl);
-        liEl.textContent = `Total: ${object.totalSales}`;
+        liEl.textContent = `Total: ${this.totalSales}`;
 };
 
 function Store (location, minHrlyCust, maxHrlyCust, avgCustSale, estDailySales, totalSales) {
@@ -86,18 +70,11 @@ const tokyoStore = new Store('Tokyo', 3, 24, 1.2, [], 0);
 const dubaiStore = new Store('Dubai', 11, 38, 3.7, [], 0);
 const parisStore = new Store('Paris', 20, 38, 2.3, [], 0);
 const limaStore = new Store('Lima', 2, 16, 4.6, [], 0);
-console.log(seattleStore.randHrlyCustomers());
-console.log(seattleStore.randHrlyCustomers());
-console.log(seattleStore.randHrlyCustomers());
-console.log(seattleStore.randHrlyCust);
-console.log(seattleStore.randHrlyCust);
-console.log(seattleStore.randHrlyCust);
-console.log(seattleStore.randHrlyCust);
 
-locationLedger(seattleStore);
-locationLedger(tokyoStore);
-locationLedger(dubaiStore);
-locationLedger(parisStore);
-locationLedger(limaStore);
+seattleStore.renderLedger();
+tokyoStore.renderLedger();
+dubaiStore.renderLedger();
+parisStore.renderLedger();
+limaStore.renderLedger();
 
 
