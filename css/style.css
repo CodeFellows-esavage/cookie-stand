@@ -49,3 +49,21 @@ section.ledger ul li {
   margin-left: 25px;
   list-style: disc;
 }
+
+/* Sales table ledger */
+
+table tr td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+table thead {
+  font-weight: bolder;
+  padding-bottom: 5px;
+}
+
+table tr th {
+  font-weight: bolder;
+  padding-right: 5px;
+}
