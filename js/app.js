@@ -157,7 +157,7 @@ const tokyoStore = new Store('Tokyo', 3, 24, 1.2, [], 0);
 const dubaiStore = new Store('Dubai', 11, 38, 3.7, [], 0);
 const parisStore = new Store('Paris', 20, 38, 2.3, [], 0);
 const limaStore = new Store('Lima', 2, 16, 4.6, [], 0);
-let storeLocations = [seattleStore, tokyoStore, dubaiStore, parisStore, limaStore];
+const storeLocations = [seattleStore, tokyoStore, dubaiStore, parisStore, limaStore];
 // seattleStore.renderLedger();
 // tokyoStore.renderLedger();
 // dubaiStore.renderLedger();
