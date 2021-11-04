@@ -105,8 +105,6 @@ Store.prototype.renderTableLedger = function (){
     }     
 };
 
-
-
 function genTableFooter(objectArray){
     const tableEl = document.querySelector('table');
     const tfootEl = document.createElement('tfoot');
@@ -125,22 +123,40 @@ function genTableFooter(objectArray){
             let hourTotal = 0;
             for (let j = 0; j < objectArray.length; j += 1){
                 hourTotal += objectArray[j].estDailySales[i];
-                console.log(objectArray[j].estDailySales[i]);
-                console.log(hourTotal); 
+                // console.log(objectArray[j].estDailySales[i]);
+                // console.log(hourTotal); 
             }
             const tdEl = document.createElement('td');
             trEl.appendChild(tdEl);
+            tdEl.setAttribute('id', `ttl${i}`)
             tdEl.textContent = hourTotal;
             grandTotal += hourTotal;
         } else {
             const tdEl = document.createElement('td');
             trEl.appendChild(tdEl);
+            tdEl.setAttribute('id', `ttl${i}`)
             tdEl.textContent = grandTotal;
         }
     }
 }
 
-
+function updateTableFooter(objectArray){
+    let cell;
+    let grandTotal = 0;
+    for (let i = 0; i < tableHeader.length; i += 1){
+        cell = document.getElementById(`ttl${i}`);
+        if (i < tableHeader.length -1){
+            let hourTotal = 0;
+            for (let j = 0; j < objectArray.length; j +=1){
+                hourTotal += objectArray[j].estDailySales[i];
+            }
+            grandTotal += hourTotal;
+            cell.textContent = hourTotal;
+        } else {
+            cell.textContent = grandTotal;
+        }
+    }
+}
 
 function Store (location, minHrlyCust, maxHrlyCust, avgCustSale, estDailySales, totalSales) {
     this.location = location,
@@ -149,21 +165,21 @@ function Store (location, minHrlyCust, maxHrlyCust, avgCustSale, estDailySales, 
     this.avgCustSale = avgCustSale,
     this.estDailySales = estDailySales,
     this.totalSales = totalSales,
-    this.estCookieSales()
+    this.estCookieSales(),
+    storeLocations.push(this) //Daniel helped here
 }
-
+const storeLocations = [];
 const seattleStore = new Store('Seattle', 23, 65, 6.3, [], 0);
 const tokyoStore = new Store('Tokyo', 3, 24, 1.2, [], 0);
 const dubaiStore = new Store('Dubai', 11, 38, 3.7, [], 0);
 const parisStore = new Store('Paris', 20, 38, 2.3, [], 0);
 const limaStore = new Store('Lima', 2, 16, 4.6, [], 0);
-const storeLocations = [seattleStore, tokyoStore, dubaiStore, parisStore, limaStore];
+// const storeLocations = [seattleStore, tokyoStore, dubaiStore, parisStore, limaStore];
 // seattleStore.renderLedger();
 // tokyoStore.renderLedger();
 // dubaiStore.renderLedger();
 // parisStore.renderLedger();
 // limaStore.renderLedger();
-
 genTable();
 seattleStore.renderTableLedger();
 tokyoStore.renderTableLedger();
@@ -171,9 +187,20 @@ dubaiStore.renderTableLedger();
 parisStore.renderTableLedger();
 limaStore.renderTableLedger();
 genTableFooter(storeLocations);
+console.log(storeLocations);
 
-console.log(storeLocations[0].estDailySales[0]);
-console.log(storeLocations[1].estDailySales[0]);
-console.log(storeLocations[2].estDailySales[0]);
-console.log(storeLocations[3].estDailySales[0]);
-console.log(storeLocations[4].estDailySales[0]);
+function formSubmit(event) {
+    event.preventDefault();
+    const formEl = event.target;
+    const loc = formEl.location.value
+    const min = Number(formEl.minCustTraffic.value);
+    const max = Number(formEl.maxCustTraffic.value);
+    const sale = Number(formEl.avgCustSale.value);
+    
+    const newloc = new Store(loc, min, max, sale, [], 0);
+    newloc.renderTableLedger();
+    updateTableFooter(storeLocations);
+}
+
+const form = document.querySelector("#new-store-form");
+form.addEventListener('submit', formSubmit);
