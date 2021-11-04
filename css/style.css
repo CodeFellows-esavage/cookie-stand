@@ -4,10 +4,15 @@
 body {
   font-family: "Comfortaa", cursive;
   text-align: center;
+  background-color: cornflowerblue;
 }
-nav ul {
+
+nav {
+  position: fixed;
   width: 100%;
+  background-color: aliceblue;
 }
+
 nav ul li {
   /* float: left; */
   display: inline-block;
@@ -24,7 +29,12 @@ img {
   margin-right: auto;
   margin-left: auto;
 }
-
+main {
+  display: block;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
 /* Sales Ledger formmating */
 section.ledger {
   color: blue;
