@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300&display=swap");
 
 body {
   font-family: "Comfortaa", cursive;
@@ -22,9 +21,6 @@ nav ul li {
   margin: 0% 2% 0% 2%;
   /* margin-left: auto; */
 }
-
-/* nav ul li a {
-} */
 
 img {
   display: block;
@@ -90,47 +86,4 @@ section.merch {
 
 footer img {
   height: 40px;
-}
-
-/* Sales Ledger formmating */
-section.ledger {
-  color: blue;
-  font-family: "Azeret Mono", monospace;
-  margin-top: 10px;
-}
-
-section.ledger h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-section.ledger ul {
-  /* display: block; */
-  margin-right: auto;
-  margin-left: auto;
-  width: 210px;
-}
-
-section.ledger ul li {
-  color: blueviolet;
-  margin-left: 25px;
-  list-style: disc;
-}
-
-/* Sales table ledger */
-
-table tr td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 3px;
-}
-
-table thead {
-  font-weight: bolder;
-  padding-bottom: 5px;
-}
-
-table tr th {
-  font-weight: bolder;
-  padding-right: 5px;
 }
