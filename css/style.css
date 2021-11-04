@@ -35,6 +35,22 @@ main {
   margin-right: auto;
   margin-left: auto;
 }
+section.locations {
+  display: block;
+}
+
+.locationbanner {
+  display: inline-block;
+  width: 250px;
+  height: 400px;
+}
+
+.locations img {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /* Sales Ledger formmating */
 section.ledger {
   color: blue;
