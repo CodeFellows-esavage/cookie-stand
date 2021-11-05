@@ -1,5 +1,4 @@
 'use strict';
-// console.log('app.js is linked');
 
 function customerRange(min, max) {
     return max - min;
@@ -91,8 +90,6 @@ function genTableFooter(objectArray){
             let hourTotal = 0;
             for (let j = 0; j < objectArray.length; j += 1){
                 hourTotal += objectArray[j].estDailySales[i];
-                // console.log(objectArray[j].estDailySales[i]);
-                // console.log(hourTotal); 
             }
             const tdEl = document.createElement('td');
             trEl.appendChild(tdEl);
@@ -150,7 +147,6 @@ dubaiStore.renderTableLedger();
 parisStore.renderTableLedger();
 limaStore.renderTableLedger();
 genTableFooter(storeLocations);
-console.log(storeLocations);
 
 function formSubmit(event) {
     event.preventDefault();
