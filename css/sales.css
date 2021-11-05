@@ -45,3 +45,7 @@ table tr th {
   font-weight: bolder;
   padding-right: 5px;
 }
+
+input:invalid:required {
+  box-shadow: 0 0 5px 1px red; /*MDN website*/
+}
