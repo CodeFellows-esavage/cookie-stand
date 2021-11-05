@@ -22,38 +22,6 @@ Store.prototype.estCookieSales = function() {
     this.totalSales = total;
  };
 
-Store.prototype.renderLedger = function (){
-    const mainEl = document.querySelector('main');
-    const sectionEl = document.createElement('section');
-    mainEl.appendChild(sectionEl);
-    sectionEl.setAttribute('class', 'ledger');
-
-    const h2El = document.createElement('h2');
-    sectionEl.appendChild(h2El);
-    h2El.textContent = `${this.location}`;
-
-    const ulEl = document.createElement('ul');
-    sectionEl.appendChild(ulEl);
-    for (let i = 0; i < this.estDailySales.length; i += 1){
-        if (i < 6){
-            const liEl = document.createElement('li');
-            ulEl.appendChild(liEl);
-            liEl.textContent = `${i + 6}am: ${this.estDailySales[i]} cookies`;
-            // console.log(ulEl.textContent);
-        } else if (i === 6){
-            const liEl = document.createElement('li');
-            ulEl.appendChild(liEl);
-            liEl.textContent = `${i + 6}pm: ${this.estDailySales[i]} cookies`;
-        } else {
-            const liEl = document.createElement('li');
-            ulEl.appendChild(liEl);
-            liEl.textContent = `${i - 6}pm: ${this.estDailySales[i]} cookies`;
-        }    
-    }
-    const liEl = document.createElement('li');
-        ulEl.appendChild(liEl);
-        liEl.textContent = `Total: ${this.totalSales}`;
-};
 // render to table
 const tableHeader = ['6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', 'Daily Location Totals'];
 
@@ -174,12 +142,7 @@ const tokyoStore = new Store('Tokyo', 3, 24, 1.2, [], 0);
 const dubaiStore = new Store('Dubai', 11, 38, 3.7, [], 0);
 const parisStore = new Store('Paris', 20, 38, 2.3, [], 0);
 const limaStore = new Store('Lima', 2, 16, 4.6, [], 0);
-// const storeLocations = [seattleStore, tokyoStore, dubaiStore, parisStore, limaStore];
-// seattleStore.renderLedger();
-// tokyoStore.renderLedger();
-// dubaiStore.renderLedger();
-// parisStore.renderLedger();
-// limaStore.renderLedger();
+
 genTable();
 seattleStore.renderTableLedger();
 tokyoStore.renderTableLedger();
