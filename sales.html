@@ -3,25 +3,34 @@
     <head>
         <title>Salmon Cookies - Sales</title>
         <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/sales.css">
     </head>
     <body>
         <header>
             <h1>Salmon Cookies - Sales</h1>
         </header>
         <main>
-            <!-- <section>
-                <h2></h2>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-
-                </ul>
-            </section> -->
-
+            <form id = "new-store-form">
+                <legend>Test</legend>
+                <fieldset>
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name = "location" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Expected Customer Traffic</legend>
+                    <label for="min-cust-traffic">Min</label>
+                    <input type="number" min = "0" id="min-cust-traffic" name = "minCustTraffic" required>
+                </fieldset>
+                <fieldset>
+                    <label for="max-cust-traffic">Max</label>
+                    <input type="number" min = "0" id = "max-cust-traffic" name = "maxCustTraffic" required>
+                </fieldset>
+                <fieldset>
+                    <label for="avg-cust-sale">Average Sale/Customer</label>
+                    <input type="number" min = "0" id = "avg-cust-sale" name = "avgCustSale" required>
+                </fieldset>
+                <button type="submit" id = "sub-btn">Submit</button>
+            </form>
         </main>
         <footer>
             <ul>
