@@ -28,7 +28,7 @@ function genTable(){
     const mainEl = document.querySelector('main');
     const sectionEl = document.createElement('section');
     mainEl.appendChild(sectionEl);
-    sectionEl.setAttribute('class', 'ledgertabel');
+    sectionEl.setAttribute('class', 'ledgertable');
     const tableEl = document.createElement('table');
     sectionEl.appendChild(tableEl);
     const theadEl = document.createElement('thead');
