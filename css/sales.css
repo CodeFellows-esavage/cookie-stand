@@ -5,35 +5,105 @@ body {
   font-family: "Comfortaa", cursive;
 }
 
-/* Sales Ledger formmating */
-section.ledger {
-  margin-top: 10px;
-}
-
-section.ledger h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-section.ledger ul {
-  /* display: block; */
+main {
+  display: block;
+  width: 1020px;
   margin-right: auto;
   margin-left: auto;
-  width: 210px;
+  background-color: #c5c392;
 }
 
-section.ledger ul li {
-  color: blueviolet;
-  margin-left: 25px;
-  list-style: disc;
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Form Styling */
+
+form {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+fieldset {
+  width: 250px;
+  height: 70px;
+  border: #f48668 solid 2px;
+}
+
+#avg-sale-fieldset {
+  width: 150px;
+}
+
+legend {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+fieldset label {
+  padding-left: 18px;
+}
+
+input {
+  font-size: 16px;
+  height: 25px;
+}
+
+.input-num {
+  width: 50px;
+}
+
+.fieldcntr {
+  display: block;
+  margin: 0 auto;
+}
+
+#btn {
+  width: 150px;
+}
+
+button {
+  display: block;
+  width: 150px;
+  height: 45px;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: aliceblue;
+  border: #f4a698 solid 2px;
+  border-radius: 4px;
+  transition-duration: 0.3s;
+  font-family: "Comfortaa", cursive;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #f4a698;
+  color: aliceblue;
+}
+
+button:active {
+  width: 140px;
+  height: 40px;
+  background-color: #f48668;
 }
 
 /* Sales table ledger */
-
+.ledgertable {
+  display: block;
+  padding-bottom: 30px;
+  width: 960px;
+  margin: 0 auto;
+}
 table tr td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 3px;
+  font-family: Arial;
+  color: #2c5f2dff;
+  background-color: #ffe77aff;
+  text-align: center;
 }
 
 table thead {

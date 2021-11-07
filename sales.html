@@ -10,26 +10,25 @@
             <h1>Salmon Cookies - Sales</h1>
         </header>
         <main>
-            <form id = "new-store-form">
-                <legend>Test</legend>
-                <fieldset>
-                    <label for="location">Location:</label>
-                    <input type="text" id="location" name = "location" required>
+            <form id = "new-store-form" class = "flex">
+                 <fieldset>
+                     <legend>Location:</legend>
+                    <input type="text" id="location" class = "fieldcntr" name = "location" required>
                 </fieldset>
                 <fieldset>
-                    <legend>Expected Customer Traffic</legend>
+                    <legend>Expected Customer Traffic:</legend>
                     <label for="min-cust-traffic">Min</label>
-                    <input type="number" min = "0" id="min-cust-traffic" name = "minCustTraffic" required>
-                </fieldset>
-                <fieldset>
+                    <input type="number" min = "0" id="min-cust-traffic" class = "input-num" name = "minCustTraffic" required>
                     <label for="max-cust-traffic">Max</label>
-                    <input type="number" min = "0" id = "max-cust-traffic" name = "maxCustTraffic" required>
+                    <input type="number" min = "0" id = "max-cust-traffic" class = "input-num" name = "maxCustTraffic" required>
                 </fieldset>
-                <fieldset>
-                    <label for="avg-cust-sale">Average Sale/Customer</label>
-                    <input type="number" min = "0" id = "avg-cust-sale" name = "avgCustSale" required>
+                <fieldset id = "avg-sale-fieldset">
+                    <legend>Avg Sale/Cust:</legend>
+                    <input type="number" min = "0" id = "avg-cust-sale" class = "fieldcntr input-num" name = "avgCustSale" required>
                 </fieldset>
-                <button type="submit" id = "sub-btn">Submit</button>
+                <div id="btn">
+                    <button type="submit" id = "sub-btn">Submit</button>
+                </div>
             </form>
         </main>
         <footer>
