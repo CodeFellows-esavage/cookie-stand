@@ -3,6 +3,7 @@
 body {
   color: black;
   font-family: "Comfortaa", cursive;
+  background-color: #c5c392;
 }
 
 main {
@@ -10,13 +11,28 @@ main {
   width: 1020px;
   margin-right: auto;
   margin-left: auto;
-  background-color: #c5c392;
+  background-image: linear-gradient(#bbb989, #9e9c74);
+
+  /* background-color: #bbb989; */
+  border-radius: 8px;
 }
 
 .flex {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+h1 {
+  padding: 15px;
+  font-size: 48px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+footer {
+  padding: 15px;
+  text-align: center;
 }
 
 /* Form Styling */
