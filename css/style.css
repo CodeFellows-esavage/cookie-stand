@@ -86,7 +86,8 @@ section.ourstory {
   padding: 15px;
   margin-bottom: 15px;
   width: 820px;
-  background-color: #bbb989;
+  background-image: linear-gradient(#bbb989, #9e9c74);
+  /* background-color: #bbb989; */
   border-radius: 8px;
   line-height: 1.4em;
 }
@@ -94,7 +95,8 @@ section.ourstory {
 .process {
   width: 310px;
   height: 295px;
-  background-color: #bbb989;
+  /* background-color: #bbb989; */
+  background-image: linear-gradient(#bbb989, #9e9c74);
   border-radius: 8px;
 }
 
@@ -118,7 +120,8 @@ section.locations {
   width: 250px;
   height: 275px;
   margin: 15px;
-  background-color: #bbb989;
+  /* background-color: #bbb989; */
+  background-image: linear-gradient(#bbb989, #9e9c74);
   border-radius: 8px;
 }
 
@@ -144,7 +147,8 @@ section.merch {
 .merchbanner {
   display: inline-block;
   height: 300px;
-  background-color: #bbb989;
+  /* background-color: #bbb989; */
+  background-image: linear-gradient(#bbb989, #9e9c74);
   border-radius: 8px;
 }
 
